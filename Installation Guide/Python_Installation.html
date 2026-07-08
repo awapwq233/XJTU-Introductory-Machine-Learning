@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Installing Python and Jupyter Notebook</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header>
+<h1 class="title">Installing Python and Jupyter Notebook</h1>
+</header>
+<nav id="TOC">
+<ul>
+<li><a href="#i-already-have-python"><span class="toc-section-number">1</span> I already have Python</a></li>
+<li><a href="#i-am-new-to-python"><span class="toc-section-number">2</span> I am new to Python</a><ul>
+<li><a href="#download-anaconda"><span class="toc-section-number">2.1</span> Download Anaconda</a></li>
+<li><a href="#install-anaconda"><span class="toc-section-number">2.2</span> Install Anaconda</a></li>
+<li><a href="#test-the-installation"><span class="toc-section-number">2.3</span> Test the installation</a></li>
+</ul></li>
+<li><a href="#create-virtual-environment"><span class="toc-section-number">3</span> Create virtual environment</a></li>
+<li><a href="#check-package-versions"><span class="toc-section-number">4</span> Check package versions</a></li>
+</ul>
+</nav>
+
+<p>All module material will be written in Python 3.</p>
+<h1 id="i-already-have-python"><span class="header-section-number">1</span> I already have Python</h1>
+<p>If you already have Python installed and if you are familiar with installing Python packages with <code>pip</code>, you can use this to install Jupyter. Please make sure you that you have upgraded to the latest version of pip using the following command:</p>
+<pre><code>pip3 install --upgrade pip   </code></pre>
+<p>Next install the Jupyter notebook with:</p>
+<pre><code>pip3 install jupyter  </code></pre>
+<p>You are recommended to use the <strong>Anaconda</strong> Python distribution. If you do not have Anaconda installed, please see Section 2 for how to install it. If you already have Anaconda installed, please go to Section 3 to create a virtual environment with all the required packages for this module.</p>
+<h1 id="i-am-new-to-python"><span class="header-section-number">2</span> I am new to Python</h1>
+<h2 id="download-anaconda"><span class="header-section-number">2.1</span> Download Anaconda</h2>
+<p>Anaconda is a Python distribution for data science and machine learning. It can be freely downloaded <a href="https://www.anaconda.com/products/individual">here</a>.</p>
+<h2 id="install-anaconda"><span class="header-section-number">2.2</span> Install Anaconda</h2>
+<p>Follow <a href="https://docs.anaconda.com/anaconda/install/">these</a> instructions to install Anaconda distribution on your computer. The instructions support Windows, Mac and Linux.</p>
+<h2 id="test-the-installation"><span class="header-section-number">2.3</span> Test the installation</h2>
+<p>Jupyter notebook should now be successfully installed on your local machine.</p>
+<p>Please open a new terminal window with one of the commands below:<br />
+<br />
+<strong>Windows:</strong> press <code>[WIN]+[r]</code> and type <code>cmd</code>. Then press <code>[Enter]</code>.<br />
+<strong>Mac:</strong> press <code>[command]+[space]</code> to open Spotlight. Then type terminal and press <code>[enter]</code>.<br />
+<strong>Linux:</strong> in Unity/Gnome press <code>[Ctrl]+[Alt]+[T]</code>.<br />
+<br />
+Type the following command in terminal to run the notebook.</p>
+<pre><code>jupyter notebook  </code></pre>
+<p>This should open a browser and a webpage that looks similar to the illustration in Figure 1. (It is possible that the webpage shown on your local machine make look slightly different).</p>
+
+<figure>
+<img src="jupyter.png" alt="Jupyter notebook in browser" style="width:100.0%" /><figcaption>Jupyter notebook in browser</figcaption>
+</figure>
+<h1 id="create-virtual-environment"><span class="header-section-number">3</span> Create virtual environment</h1>
+<p>A virtual environment is a named, isolated, working copy of Python that that maintains its own files, directories, and paths so that you can work with specific versions of libraries or Python itself without affecting other Python projects.<br />
+To create a new virtual environment that contains all packages needed for this module and a stable Python version please run the following two commands (replace <code>*name*</code> with your preferred name):</p>
+<pre><code>    conda create --name *name* python=3.7.3 numpy pandas scipy 
+    scikit-learn tensorflow keras matplotlib seaborn
+    
+    conda install notebook ipykernel</code></pre>
+<p>To activate your newly created virtual environment, run the following command:</p>
+<pre><code>    conda activate *name*</code></pre>
+<h1 id="check-package-versions"><span class="header-section-number">4</span> Check package versions</h1>
+<p>You can check the versions of the installed packages by opening up a notebook, importing all the packages and checking the <code>version</code> attribute.</p>
+<pre><code>    import numpy as np
+    
+    np.__version__
+    </code></pre>
+<p>Below you can see the versions for each package that guarantee the notebooks to run smoothly:</p>
+<ul>
+<li><p><code>numpy</code> 1.19.1</p></li>
+<li><p><code>pandas</code> 1.1.1</p></li>
+<li><p><code>scipy</code> 1.5.2</p></li>
+<li><p><code>sklearn</code> 0.23.2</p></li>
+<li><p><code>tensorflow</code> 2.2.0</p></li>
+<li><p><code>keras</code> 2.4.3</p></li>
+<li><p><code>matplotlib</code> 3.3.1</p></li>
+<li><p><code>seaborn</code> 0.11.0</p></li>
+</ul>
+</body>
+</html>
